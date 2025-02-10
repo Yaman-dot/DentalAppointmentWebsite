@@ -2,12 +2,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
 import { assets } from '../assets/frontend/assets'
+import RelatedDoctors from '../components/RelatedDoctors'
 
 const Appointment = () => {
 
   const {docId} = useParams()
   const {doctors, currencySymbol} = useContext(AppContext)
-
+  const dayofWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
   const [docInfo, setDocInfo] = useState(null)
   const [docSlots, setDocSlots] = useState([])
   const [slotIndex, setSlotIndex] = useState(0)
@@ -29,14 +30,14 @@ const Appointment = () => {
     {
       // we are going to get the date with index
       let currentDate = new Date(today)
-      currentDate.setDate(today.getDay() + i)
+      currentDate.setDate(today.getDate() + i)
       // we are going to set the end time of the date with the index
       let endTime = new Date()
       endTime.setDate(today.getDate()+i) // <----- fixed bug 
-      endTime.setHours(24,0,0,0)
+      endTime.setHours(21,0,0,0) //set the hour of which the dental clinic will close. default is 9pm
 
       //We are going to set the hours here
-      if(today.getDate === currentDate.getDate())
+      if(today.getDate() === currentDate.getDate())
       {
         currentDate.setHours(currentDate.getHours()>10 ? currentDate.getHours() + 1  : 10)
         currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30: 0)
@@ -107,6 +108,30 @@ const Appointment = () => {
           </p>
         </div>
       </div>
+      {/* booooking slots */}
+      <div className='sm:ml-72 sm: pl-4 mt-4 font-medium text-gray-700' >
+        <p>Booking Slots</p>
+        <div className='flex gap-3 items-center w-full overflow-x-scroll mt-4'>
+          {
+            docSlots.length && docSlots.map((item, index)=>(
+              <div onClick={()=> setSlotIndex(index)} className={`text-center py-6 min-w-16 rounded-lg cursor-pointer ${slotIndex === index ? 'bg-primary text-white' : 'border border-gray-200'}`} key={index}>
+                <p>{item[0] && dayofWeek[item[0].datetime.getDay()]}</p>
+                <p>{item[0] && item[0].datetime.getDate()}</p>
+              </div>
+            ))
+          }
+        </div>
+        <div className='flex items-center gap-3 w-full overflow-x-scroll mt-4'>
+          {
+            docSlots.length && docSlots[slotIndex].map((item, index)=>(
+              <p onClick={()=> setSlotTime(item.time)} className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-lg cursor-pointer ${item.time === slotTime ? 'bg-primary text-white' : 'text-gray-400 border border-gray-300'}`} key={index}>{item.time.toLowerCase()}</p>
+            ))
+          }
+        </div>
+        <button className='bg-primary text-white text-sm font-light px-14 py-3 rounded-md my-6'>Book an Appointment</button>
+      </div>
+      {/* Related Doctors */}
+      <RelatedDoctors docId={docId} speciality={docInfo.speciality}/>
     </div>
   )
 }
