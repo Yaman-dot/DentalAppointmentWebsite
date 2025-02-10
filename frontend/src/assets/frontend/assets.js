@@ -39,8 +39,16 @@ import General_physician from './General_physician.svg'
 import Gynecologist from './Gynecologist.svg'
 import Neurologist from './Neurologist.svg'
 import Pediatricians from './Pediatricians.svg'
-
-
+import Dental_Implants from './Dental-Implants.jpeg'
+import Tooth_Extractions from './Tooth-Extraction.jpeg'
+import Braces from './Braces.png'
+import Teeth_Whitening from './Teeth-Whitening.jpg'
+import Root_Canal from './Root-Canal.jpg'
+import Teeth_Cleaning from './Teeth-Cleaning.jpeg'
+import Veneers from './Veneers.jpeg'
+import Dental_Fillings from './Dental-Filling.jpeg'
+import Younis from './Younis.png'
+import Lumineer from './Lumineer_01.jpg'
 export const assets = {
     appointment_img,
     placeHolder,
@@ -61,7 +69,17 @@ export const assets = {
     stripe_logo,
     razorpay_logo,
     GroupPhoto,
-    theMan
+    theMan,
+    Dental_Implants,
+    Tooth_Extractions,
+    Braces,
+    Teeth_Whitening,
+    Root_Canal,
+    Teeth_Cleaning,
+    Veneers,
+    Dental_Fillings,
+    Lumineer,
+    Younis,
 }
 
 export const specialityData = [
@@ -93,24 +111,96 @@ export const specialityData = [
 export const servicesData = [
     {
         id: 'teeth-cleaning',
-        image: placeHolder, // Replace with your actual image import
+        image: Teeth_Cleaning, // Replace with your actual image import
         title: 'Teeth Cleaning',
-        description: 'Professional teeth cleaning to remove plaque and tartar, ensuring a healthy smile.',
+        short_description: 'Professional teeth cleaning to remove plaque and tartar, ensuring a healthy smile.',
+        long_description: 'A professional teeth cleaning service designed to remove plaque, tartar, and surface stains, preventing gum disease and cavities. This procedure helps maintain oral hygiene and freshens breath, ensuring your smile stays bright and healthy.',
+        type: 'Preventive',
+        specialist: 'Periodontist',
+        fee: 100,
     },
     {
         id: 'dental-fillings',
-        image: placeHolder, // Replace with your actual image import
+        image: Dental_Fillings,
         title: 'Dental Fillings',
-        description: 'Restore your teeth with durable and aesthetically pleasing dental fillings.',
+        short_description: 'Restores decayed or damaged teeth with strong fillings.',
+        long_description: 'Our durable dental fillings repair cavities and minor tooth damage, restoring both function and appearance. Made from high-quality materials, they blend seamlessly with your natural teeth, preventing further decay and ensuring long-lasting protection.',
+        type: 'Restorative',
+        specialist: 'Prosthodontist',
+        fee: 150,
+    },
+    {
+        id: 'veneers',
+        image: Veneers,
+        title: 'Veneers',
+        short_description: 'Restores decayed or damaged teeth with strong fillings.',
+        long_description: 'Our durable dental fillings repair cavities and minor tooth damage, restoring both function and appearance. Made from high-quality materials, they blend seamlessly with your natural teeth, preventing further decay and ensuring long-lasting protection.',
+        type: 'Cosmetic',
+        specialist: 'Cosmotic Dentist',
+        fee: 150,
+    },
+    {
+        id: 'lumineers',
+        image: Lumineer,
+        title: 'Lumineers',
+        short_description: 'Restores decayed or damaged teeth with strong fillings.',
+        long_description: 'Our durable dental fillings repair cavities and minor tooth damage, restoring both function and appearance. Made from high-quality materials, they blend seamlessly with your natural teeth, preventing further decay and ensuring long-lasting protection.',
+        type: 'Cosmetic',
+        specialist: 'Cosmotic Dentist',
+        fee: 150,
     },
     {
         id: 'root-canal',
-        image: placeHolder, // Replace with your actual image import
+        image: Root_Canal,
         title: 'Root Canal',
-        description: 'Effective treatment to save infected teeth and relieve pain.',
+        short_description: 'Saves infected teeth and relieves pain.',
+        long_description: 'A root canal treatment removes infected pulp inside a tooth, eliminating pain and preventing tooth loss. This procedure restores strength and function while preserving your natural tooth, avoiding the need for extraction.',
+        type: 'Therapeutic',
+        specialist: 'Endodontist',
+        fee: 200,
     },
-    // Add more services as needed
+    {
+        id: 'teeth-whitening',
+        image: Teeth_Whitening,
+        title: 'Teeth Whitening',
+        short_description: 'Brightens teeth for a whiter, more confident smile.',
+        long_description: 'Our professional teeth whitening treatment removes deep stains and discoloration caused by coffee, tea, smoking, and aging. This safe and effective procedure leaves your teeth several shades whiter, enhancing your overall appearance.',
+        type: 'Cosmetic',
+        specialist: 'Cosmetic Dentist',
+        fee: 180,
+    },
+    {
+        id: 'braces-aligners',
+        image: Braces,
+        title: 'Braces & Aligners',
+        short_description: 'Straightens teeth for better aesthetics and function.',
+        long_description: 'We offer traditional braces and modern clear aligners to correct misaligned teeth, improve bite issues, and enhance your smile. Our orthodontic treatments are customized for each patient to ensure optimal results.',
+        type: 'Orthodontic',
+        specialist: 'Orthodontist',
+        fee: 3000,
+    },
+    {
+        id: 'tooth-extraction',
+        image: Tooth_Extractions,
+        title: 'Tooth Extraction',
+        short_description: 'Safe and painless removal of problematic teeth.',
+        long_description: 'Whether due to severe decay, impacted wisdom teeth, or overcrowding, our tooth extraction procedures are performed with precision and minimal discomfort. We ensure a smooth recovery process with proper aftercare guidance.',
+        type: 'Surgical',
+        specialist: 'Oral Surgeon',
+        fee: 250,
+    },
+    {
+        id: 'dental-implants',
+        image: Dental_Implants,
+        title: 'Dental Implants',
+        short_description: 'Permanent replacement for missing teeth.',
+        long_description: 'Dental implants provide a long-lasting, natural-looking solution for missing teeth. These titanium posts integrate with your jawbone, offering a stable foundation for crowns or dentures, restoring full functionality and aesthetics.',
+        type: 'Restorative',
+        specialist: 'Prosthodontist',
+        fee: 2000,
+    },
 ];
+
 export const doctors = [
     {
         _id: 'doc1',
@@ -156,11 +246,11 @@ export const doctors = [
     },
     {
         _id: 'doc4',
-        name: 'Dr. Christopher Lee',
-        image: doc4,
+        name: 'Dr. Younis Abulaban',
+        image: Younis,
         speciality: 'Maxillofacial',
         degree: 'MBBS',
-        experience: '2 Years',
+        experience: '10 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
         fees: 40,
         address: {

@@ -11,6 +11,7 @@ import MyAppointments from './pages/myappointments'
 import Appointment from './pages/Appointment'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ServiceDetail from './pages/servicedetails'
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
         <Route path='/doctors' element={<Doctors />} />
         <Route path='/doctors/:speciality' element={<Doctors />} />
         <Route path='/services' element={<Service />} />
-        <Route path='/services/:serviceId' element={<Service />} />
+        <Route path='/services/:serviceId' element={<ServiceDetail />} />
         <Route path='/login' element={<Login />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
