@@ -9,16 +9,71 @@ const Appointment = () => {
   const {doctors, currencySymbol} = useContext(AppContext)
 
   const [docInfo, setDocInfo] = useState(null)
+  const [docSlots, setDocSlots] = useState([])
+  const [slotIndex, setSlotIndex] = useState(0)
+  const [slotTime, setSlotTime] = useState('')
+
 
   const fetchDocInfo = async () => {
     const docInfo = doctors.find(doc => doc._id == docId)
     setDocInfo(docInfo)
-    console.log(docInfo)
+
+  }
+
+  const getAvailableSlots = async () => {
+    setDocSlots([])
+    // we are going to get the current date here
+    let today = new Date()
+
+    for(let i = 0; i < 7; i++)
+    {
+      // we are going to get the date with index
+      let currentDate = new Date(today)
+      currentDate.setDate(today.getDay() + i)
+      // we are going to set the end time of the date with the index
+      let endTime = new Date()
+      endTime.setDate(today.getDate()+1)
+      endTime.setHours(21,0,0,0)
+
+      //We are going to set the hours here
+      if(today.getDate === currentDate.getDate())
+      {
+        currentDate.setHours(currentDate.getHours()>10 ? currentDate.getHours() + 1  : 10)
+        currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30: 0)
+      }
+      else
+      {
+        currentDate.setHours(10)
+        currentDate.setMinutes(0)
+      }
+
+      let timeSlots = []
+      while(currentDate < endTime)
+      {
+        let formattedTime = currentDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+
+        //We are going to add the slots to the timeslots array above
+        timeSlots.push({
+          datetime: new Date(currentDate),
+          time: formattedTime
+        })
+
+        //Increase time by 30 minutes.
+        currentDate.setMinutes(currentDate.getMinutes()  +30)
+      }
+
+      setDocSlots(prev => ([...prev,timeSlots]))
+    }
+
   }
 
   useEffect(() => {
     fetchDocInfo()
   },[doctors, docId])
+
+  useEffect(()=>{
+    getAvailableSlots()
+  },[docInfo])
   return docInfo && (
     <div>
       {/* ---------- Doctor Details ----------------*/}
