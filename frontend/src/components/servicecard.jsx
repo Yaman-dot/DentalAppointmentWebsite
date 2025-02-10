@@ -1,10 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { assets } from '../assets/frontend/assets'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const ServiceCard = ({image, title, description}) => {
+const ServiceCard = ({ image, title, description }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+    <div className="bg-white rounded-lg border border-green-200 rounded-xl overflow-hidden transition-transform transform hover:scale-105 cursor-pointer">
       {/* Image */}
       <img
         src={image}
@@ -19,19 +18,15 @@ const ServiceCard = ({image, title, description}) => {
 
         {/* Description */}
         <p className="text-gray-600 mb-4">{description}</p>
-
-        {/* Learn More Button */}
-        <button className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition">
-          Learn More
-        </button>
       </div>
     </div>
-  )
-}
+  );
+};
+
 ServiceCard.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-}
+};
 
-export default ServiceCard
+export default ServiceCard;

@@ -5,10 +5,12 @@ import Doctors from './pages/doctors'
 import Login from './pages/login'
 import About from './pages/about'
 import Contact from './pages/contact'
+import Service from './pages/services'
 import MyProfile from './pages/myprofile'
 import MyAppointments from './pages/myappointments'
 import Appointment from './pages/Appointment'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -18,7 +20,8 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/doctors' element={<Doctors />} />
         <Route path='/doctors/:speciality' element={<Doctors />} />
-        <Route path='/services' element={<Contact />} />
+        <Route path='/services' element={<Service />} />
+        <Route path='/services/:serviceId' element={<Service />} />
         <Route path='/login' element={<Login />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
@@ -26,6 +29,7 @@ const App = () => {
         <Route path='/my-appointments' element={<MyAppointments />} />
         <Route path='/appointment/:docId' element={<Appointment />} />
       </Routes>
+      <Footer />
     </div>
   )
 }

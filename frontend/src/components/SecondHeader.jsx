@@ -4,7 +4,6 @@ import { assets } from '../assets/frontend/assets';
 const SecondHeader = () => {
   return (
     <div className='flex flex-col md:flex-row flex-wrap  rounded-lg  text-black'>
-        
         {/*---- LEFT SECTION ----*/}
         <div className='md:w-1/2 relative'>
         <img className='w-full md:absolute bottom-0 h-auto rounded-lg' src={assets.GroupPhoto} alt="Dental Clinic" />

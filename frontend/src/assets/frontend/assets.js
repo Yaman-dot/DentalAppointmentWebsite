@@ -17,6 +17,7 @@ import upload_icon from './upload_icon.png'
 import stripe_logo from './stripe_logo.png'
 import razorpay_logo from './razorpay_logo.png'
 import GroupPhoto from './GroupPhoto.png'
+import theMan from './theMan.png'
 import doc1 from './doc1.png'
 import doc2 from './doc2.png'
 import doc3 from './doc3.png'
@@ -59,7 +60,8 @@ export const assets = {
     upload_icon,
     stripe_logo,
     razorpay_logo,
-    GroupPhoto
+    GroupPhoto,
+    theMan
 }
 
 export const specialityData = [
@@ -88,13 +90,33 @@ export const specialityData = [
         image: Gastroenterologist
     },
 ]
-
+export const servicesData = [
+    {
+        id: 'teeth-cleaning',
+        image: placeHolder, // Replace with your actual image import
+        title: 'Teeth Cleaning',
+        description: 'Professional teeth cleaning to remove plaque and tartar, ensuring a healthy smile.',
+    },
+    {
+        id: 'dental-fillings',
+        image: placeHolder, // Replace with your actual image import
+        title: 'Dental Fillings',
+        description: 'Restore your teeth with durable and aesthetically pleasing dental fillings.',
+    },
+    {
+        id: 'root-canal',
+        image: placeHolder, // Replace with your actual image import
+        title: 'Root Canal',
+        description: 'Effective treatment to save infected teeth and relieve pain.',
+    },
+    // Add more services as needed
+];
 export const doctors = [
     {
         _id: 'doc1',
-        name: 'Dr. Richard James',
-        image: doc1,
-        speciality: 'General physician',
+        name: 'د. عبدالرحمن بن فهد القحطاني',
+        image: theMan,
+        speciality: 'اخصائي جراحة و شسمه',
         degree: 'MBBS',
         experience: '4 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
