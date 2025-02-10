@@ -8,7 +8,8 @@ const ServicesSection = () => {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h2 className="text-3xl font-medium text-center mb-8">Our Services</h2>
+      <h2 className="text-3xl font-medium text-center mb-4">Our Services</h2>
+      <p className='text-center mb-8 text-gray-600'>Browse through some of our services</p>
 
       {/* Grid Layout for Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -49,6 +49,7 @@ import Veneers from './Veneers.jpeg'
 import Dental_Fillings from './Dental-Filling.jpeg'
 import Younis from './Younis.png'
 import Lumineer from './Lumineer_01.jpg'
+import twoMen from './2Men.png'
 export const assets = {
     appointment_img,
     placeHolder,
@@ -80,6 +81,7 @@ export const assets = {
     Dental_Fillings,
     Lumineer,
     Younis,
+    twoMen,
 }
 
 export const specialityData = [
@@ -210,7 +212,7 @@ export const doctors = [
         degree: 'MBBS',
         experience: '4 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        fees: 350,
         address: {
             line1: '17th Cross, Richmond',
             line2: 'Circle, Ring Road, London'
@@ -218,8 +220,8 @@ export const doctors = [
     },
     {
         _id: 'doc2',
-        name: 'Dr. Emily Larson',
-        image: doc2,
+        name: 'Dr. El Wo7osh',
+        image: twoMen,
         speciality: 'Endodontist',
         degree: 'MBBS',
         experience: '3 Years',
