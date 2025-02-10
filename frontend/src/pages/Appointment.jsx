@@ -32,8 +32,8 @@ const Appointment = () => {
       currentDate.setDate(today.getDay() + i)
       // we are going to set the end time of the date with the index
       let endTime = new Date()
-      endTime.setDate(today.getDate()+1)
-      endTime.setHours(21,0,0,0)
+      endTime.setDate(today.getDate()+i) // <----- fixed bug 
+      endTime.setHours(24,0,0,0)
 
       //We are going to set the hours here
       if(today.getDate === currentDate.getDate())
@@ -74,6 +74,10 @@ const Appointment = () => {
   useEffect(()=>{
     getAvailableSlots()
   },[docInfo])
+
+  useEffect(() =>{
+    console.log(docSlots);
+  }, [docSlots])
   return docInfo && (
     <div>
       {/* ---------- Doctor Details ----------------*/}
