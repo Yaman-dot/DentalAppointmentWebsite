@@ -9,6 +9,7 @@ const Service = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const type = searchParams.get('type');
+  const [showFilter, setShowFilter] = useState(false)
 
   useEffect(() => {
     if (type) {
@@ -27,14 +28,15 @@ const Service = () => {
       <div>
         <p className='text-gray-600'>Browse through our services</p>
         <div className='flex flex-col sm:flex-row items-start gap-5 mt-5'>
-          <div className='flex flex-col gap-4 text-sm text-gray-600'>
-          <p onClick={() => filterServicesByType('')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "All Services" ? "bg-indigo-100 text-black" : ""}`}>All Services</p>
-          <p onClick={() => filterServicesByType('Preventive')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "Preventive" ? "bg-indigo-100 text-black" : ""}`}>Preventive</p>
-          <p onClick={() => filterServicesByType('Restorative')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "Restorative" ? "bg-indigo-100 text-black" : ""}`}>Restorative</p>
-          <p onClick={() => filterServicesByType('Therapeutic')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "Therapeutic" ? "bg-indigo-100 text-black" : ""}`}>Therapeutic</p>
-          <p onClick={() => filterServicesByType('Cosmetic')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "Cosmetic" ? "bg-indigo-100 text-black" : ""}`}>Cosmetic</p>
-          <p onClick={() => filterServicesByType('Orthodontic')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "Orthodontic" ? "bg-indigo-100 text-black" : ""}`}>Orthodontic</p>
-          <p onClick={() => filterServicesByType('Surgical')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "Surgical" ? "bg-indigo-100 text-black" : ""}`}>Surgical</p>
+        <button className={`py-1 px-3 border rounded text-sm transition-all sm:hidden ${showFilter? 'bg-primary text-white' : ''}`} onClick={()=>setShowFilter(prev => !prev)}>Filters</button>
+        <div className={` flex-col gap-4 text-sm text-gray-600 ${showFilter ? 'flex' : 'hidden sm:flex'}`}>
+          <p onClick={() => filterServicesByType('')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "All Services" ? "bg-green-100 text-black" : ""}`}>All Services</p>
+          <p onClick={() => filterServicesByType('Preventive')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "Preventive" ? "bg-green-100 text-black" : ""}`}>Preventive</p>
+          <p onClick={() => filterServicesByType('Restorative')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "Restorative" ? "bg-green-100 text-black" : ""}`}>Restorative</p>
+          <p onClick={() => filterServicesByType('Therapeutic')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "Therapeutic" ? "bg-green-100 text-black" : ""}`}>Therapeutic</p>
+          <p onClick={() => filterServicesByType('Cosmetic')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "Cosmetic" ? "bg-green-100 text-black" : ""}`}>Cosmetic</p>
+          <p onClick={() => filterServicesByType('Orthodontic')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "Orthodontic" ? "bg-green-100 text-black" : ""}`}>Orthodontic</p>
+          <p onClick={() => filterServicesByType('Surgical')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${type === "Surgical" ? "bg-green-100 text-black" : ""}`}>Surgical</p>
         </div>
       </div>
       </div>
