@@ -4,7 +4,7 @@ npm run dev
 
 
 for the backend make sure you have 
-express, mysql12, multer, bcrypt, cloudinary, cors, dotenv, jsonwebtoken nodemon, validator
+express, mysql12, multer, bcrypt, cloudinary, cors, dotenv, jsonwebtoken nodemon, validator, sequelize 
 
 the command is 
-npm install express msql12 multer bcrypt cloudinary cors dotenv jsonwebtoken nodemon validator 
+npm install express msql12 multer bcrypt cloudinary cors dotenv jsonwebtoken nodemon validator sequelize 
