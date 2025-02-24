@@ -29,7 +29,7 @@ const doctorSchema = sequelize.define('Doctor', {
       allowNull: false,
     },
     experience: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     about: {
@@ -38,7 +38,8 @@ const doctorSchema = sequelize.define('Doctor', {
     },
     available: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      defaultValue: true,
+      allowNull: true,
     },
     fees: {
       type: DataTypes.FLOAT,
