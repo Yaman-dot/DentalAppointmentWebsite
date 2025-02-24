@@ -11,4 +11,4 @@ npm install express msql12 multer bcrypt cloudinary cors dotenv jsonwebtoken nod
 
 to start the server go to the backend folder, open it in the terminal and type
 
-npm start
+npm server
