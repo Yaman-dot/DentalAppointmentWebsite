@@ -8,3 +8,7 @@ express, mysql12, multer, bcrypt, cloudinary, cors, dotenv, jsonwebtoken nodemon
 
 the command is 
 npm install express msql12 multer bcrypt cloudinary cors dotenv jsonwebtoken nodemon validator sequelize 
+
+to start the server go to the backend folder, open it in the terminal and type
+
+npm start
