@@ -1,6 +1,8 @@
-make sure you have reactjs and tailwind css installed to run the frontend. 
-and then open the terminal in the frontend folder and type 
-npm run dev
+open the frontend folder, make sure you have npm installed, then open the cmd in the frontend folder and type	
+npm install axios react-router-dom react-toastify 
+then install tailwindcss by typing 
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 
 
 for the backend make sure you have 
